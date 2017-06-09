@@ -59,28 +59,18 @@ function doItNow() {
                 });
                 const isDiff = statuses.length > 0;
                 const stats = [];
-                if (counts.added > 0) {
-                    stats.push(`+${green(counts.added)}`);
-                }
-                if (counts.removed > 0) {
-                    stats.push(`-${red(counts.removed)}`);
-                }
-                if (counts.edited > 0) {
-                    stats.push(`±${yellow(counts.edited)}`);
-                }
-                if (counts.renamed > 0) {
-                    stats.push(`~${magenta(counts.renamed)}`);
-                }
-                let colourItem = argv.invert ? black : white;
-                let statStr = isDiff ?
-                    stats.join(" ") :
-                    green("✓");
                 if (error) {
-                    statStr = red("✘");
-                    colourItem = dim;
+                    stats.push(red("✘"));
+                } else {
+                    stats.push(isDiff ? " " : green("✓"));
                 }
+                stats.push((counts.added > 0) ? `+${green(counts.added)}` : " ");
+                stats.push((counts.removed > 0) ? `-${red(counts.removed)}` : " ");
+                stats.push((counts.edited > 0) ? `±${yellow(counts.edited)}` : " ");
+                stats.push((counts.renamed > 0) ? `~${magenta(counts.renamed)}` : " ");
+                const colourItem = argv.invert ? black : white;
                 const itemName = bold(colourItem(path.basename(dir)));
-                lines.push([itemName, statStr]);
+                lines.push([itemName, ...stats]);
             });
             text = formatColumns(lines);
             logUpdate(text);
