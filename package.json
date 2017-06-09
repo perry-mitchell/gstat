@@ -1,0 +1,22 @@
+{
+  "name": "gstat",
+  "version": "0.1.0",
+  "description": "Git directory status application",
+  "main": "index.js",
+  "bin": {
+    "gstat": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Perry Mitchell <perry@perrymitchell.net>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "colm": "^0.1.1",
+    "log-update": "^2.0.0",
+    "minimist": "^1.2.0",
+    "nodegit": "^0.18.3"
+  },
+  "preferGlobal": true
+}
