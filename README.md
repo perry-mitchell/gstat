@@ -1,7 +1,7 @@
 # gstat
 Git repo stats reporter application for the terminal
 
-![gstat command example](gstat-example.png)
+[![gstat on npm](https://nodei.co/npm/gstat.png?downloads=true)](https://www.npmjs.com/package/gstat)
 
 ## Installation
 Install `gstat` globally:
@@ -25,3 +25,8 @@ Certain flags can be added to the command:
  * `-w`: Watch the listed directories for changes every 5 seconds
  * `--watch=n`: Watch the listed directories for changes every **n** seconds
  * `-h`: Show headings
+
+## Output
+`gstat` outputs a list of matched directories and their statuses:
+
+![gstat command example](gstat-example.png)
