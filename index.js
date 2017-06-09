@@ -65,7 +65,9 @@ function doItNow() {
                 });
                 const isDiff = statuses.length > 0;
                 const stats = [];
+                let colourItem = argv.invert ? black : white;
                 if (error) {
+                    colourItem = dim;
                     stats.push(red("✘"));
                 } else {
                     stats.push(isDiff ? " " : green("✓"));
@@ -74,7 +76,6 @@ function doItNow() {
                 stats.push((counts.removed > 0) ? `-${red(counts.removed)}` : " ");
                 stats.push((counts.edited > 0) ? `±${yellow(counts.edited)}` : " ");
                 stats.push((counts.renamed > 0) ? `~${magenta(counts.renamed)}` : " ");
-                const colourItem = argv.invert ? black : white;
                 const itemName = bold(colourItem(path.basename(dir)));
                 lines.push([itemName, ...stats]);
             });
