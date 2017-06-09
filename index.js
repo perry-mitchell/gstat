@@ -5,8 +5,9 @@ const argv = require("minimist")(process.argv.slice(2));
 const nodegit = require("nodegit");
 const logUpdate = require("log-update");
 const formatColumns = require("colm");
-const { green, red, yellow, magenta, bold, dim, white, black, reset } = require("chalk");
+const { green, red, yellow, magenta, bold, dim, white, black, underline } = require("chalk");
 
+const headings = !!argv.h;
 const watch = (argv.w && 5) || argv.watch;
 const directories = argv._.map(dir => path.resolve(process.cwd(), dir));
 
@@ -36,6 +37,11 @@ function doItNow() {
         ))
         .then(dirResults => {
             const lines = [];
+            if (headings) {
+                lines.push([
+                    "Directory", "Clean+Repo", "Add", "Del", "Mod", "Rn"
+                ].map(item => underline(item)));
+            }
             dirResults.forEach(([dir, statuses, error]) => {
                 const counts = {
                     added: 0,

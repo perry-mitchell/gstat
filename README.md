@@ -22,3 +22,4 @@ Certain flags can be added to the command:
 
  * `-w`: Watch the listed directories for changes every 5 seconds
  * `--watch=n`: Watch the listed directories for changes every **n** seconds
+ * `-h`: Show headings
