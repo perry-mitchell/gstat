@@ -8,7 +8,7 @@
   },
   "scripts": {
     "pub": "np",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./index.js ."
   },
   "author": "Perry Mitchell <perry@perrymitchell.net>",
   "license": "MIT",
