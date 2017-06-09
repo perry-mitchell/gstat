@@ -1,6 +1,8 @@
 # gstat
 Git repo stats reporter application for the terminal
 
+![gstat command example](gstat-example.png)
+
 ## Installation
 Install `gstat` globally:
 
