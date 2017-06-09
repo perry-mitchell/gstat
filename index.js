@@ -10,7 +10,7 @@ const { green, red, yellow, magenta, bold, dim, white, black, reset } = require(
 const watch = (argv.w && 5) || argv.watch;
 const directories = argv._.map(dir => path.resolve(process.cwd(), dir));
 
-let frames = [
+const frames = [
     "◴",
     "◷",
     "◶",
@@ -80,10 +80,8 @@ function doItNow() {
                     colourItem = dim;
                 }
                 const itemName = bold(colourItem(path.basename(dir)));
-                // lines.push(` ${itemName}: ${statStr}`);
                 lines.push([itemName, statStr]);
             });
-            // text = lines.join("\n");
             text = formatColumns(lines);
             logUpdate(text);
         });
@@ -99,7 +97,6 @@ const run = () => doItNow().then(function __done() {
 run();
 if (watch) {
     setInterval(() => {
-        // text = text.substr(0, text.length - 2) + "\n" + white(getIcon());
         logUpdate(text + "\n" + getIcon());
     }, 400);
 }
