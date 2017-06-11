@@ -10,6 +10,10 @@
     "pub": "np",
     "test": "./index.js ."
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perry-mitchell/gstat"
+  },
   "author": "Perry Mitchell <perry@perrymitchell.net>",
   "license": "MIT",
   "dependencies": {
