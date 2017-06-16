@@ -25,8 +25,10 @@ Certain flags can be added to the command:
  * `-w`: Watch the listed directories for changes every 5 seconds
  * `--watch=n`: Watch the listed directories for changes every **n** seconds
  * `-h`: Show headings
+ * `-b`: Show branch
+ * `--boring`: Disable emojis
 
 ## Output
 `gstat` outputs a list of matched directories and their statuses:
 
-![gstat command example](gstat-example.png)
+![gstat command example](https://github.com/perry-mitchell/gstat/raw/master/gstat-example.png)
